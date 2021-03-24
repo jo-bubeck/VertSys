@@ -19,6 +19,9 @@ public class Publisher implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @ManyToOne
+    private Book book;
+
     @Column(length = 100)
     @NotNull(message = "Der Name muss gesetzt sein!")
     @Size(min = 1, max = 100)

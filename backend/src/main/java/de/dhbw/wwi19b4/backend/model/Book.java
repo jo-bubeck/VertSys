@@ -19,10 +19,15 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @ManyToOne
+    private LibraryService libraryService;
+
     @Column(length = 100)
     @NotNull(message = "Der Name muss gesetzt sein!")
     @Size(min = 1, max = 100)
     private String title = "";
 
     private int yearOfPublication;
+
+    private int pages = 0;
 }
