@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -23,4 +25,7 @@ public class LibraryService implements Serializable {
     @NotNull(message = "Der Name muss gesetzt sein!")
     @Size(min = 1, max = 100)
     private String name = "";
+
+    @OneToMany(mappedBy = "libraryService", cascade = {CascadeType.REMOVE})
+    List<Book> books = new ArrayList<>();
 }
