@@ -11,6 +11,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+// Entitty-Klasse für den Library-Service
+// Dies ist vergleichbar mit einer Bibliothek
 @Entity
 @Data
 @NoArgsConstructor
