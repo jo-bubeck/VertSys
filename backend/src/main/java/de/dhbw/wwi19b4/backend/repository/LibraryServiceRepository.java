@@ -6,6 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
+// Repository-Interface für einen Library-Service
 @RepositoryRestResource(collectionResourceRel = "libraryServices", path = "library-service")
 public interface LibraryServiceRepository extends PagingAndSortingRepository<LibraryService, Long> {
 

@@ -22,12 +22,13 @@ public class LibraryService implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
+    // Konfigurieren der Spaltennamen und deren Speicherbedarf
     @Column(length = 100)
     @NotNull(message = "Der Name muss gesetzt sein!")
     @Size(min = 1, max = 100)
     private String name = "";
 
+    // 1 zu n Beziehung zwischen Library und Book
     @OneToMany(mappedBy = "libraryService", cascade = {CascadeType.REMOVE})
     List<Book> books = new ArrayList<>();
 }

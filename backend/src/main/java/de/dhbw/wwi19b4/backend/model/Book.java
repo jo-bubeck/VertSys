@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+// Entity-Klasse für ein Buch
 @Entity
 @Data
 @NoArgsConstructor
@@ -19,9 +20,11 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    //n zu 1 Beziehung zwischen Buch und Library
     @ManyToOne
     private LibraryService libraryService;
 
+    //Konfigurieren der Spaltennamen und Attributen eines Buches
     @Column(length = 100)
     @NotNull(message = "Der Name muss gesetzt sein!")
     @Size(min = 1, max = 100)
